@@ -1,11 +1,1 @@
-[
-    {
-        "id": "1234",
-        "name": "Room",
-        "description": "Nice and cozy",
-        "city": "Bansko",
-        "beds": 2,
-        "price": 130
-
-    }
-]
+[{"id":"1234","name":"Room","description":"Nice and cozy","city":"Bansko","beds":2,"price":130,"imgUrl":"/static/assets/room1.jpg"},{"id":"000000bc1a5","name":"bai","description":"kurva","city":"ivan","beds":2,"price":123,"imgUrl":"3"},{"id":"0000004488d","name":"pompata","description":"mnogo sex ","city":"pavle banq","beds":2,"price":69,"imgUrl":"/static/assets/room2.jpg"}]
