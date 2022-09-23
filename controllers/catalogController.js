@@ -1,12 +1,12 @@
 const router = require('express').Router()
 
-router.get('/catalog', (res, res) => {
+router.get('/', (req, res) => {
     res.render('catalog', {
         title: 'All Accomodation'
     });
 });
 
-router.get('/catalog:id', (res, res) => {
+router.get('/:id', (req, res) => {
     res.render('details', {
         title: 'Accomodation Details'
     });
