@@ -7,10 +7,9 @@ function getById(id) {
     return Room.findById(id).lean()
     
 }
-/*
+
    async function create(roomData){
     const room = {
-        id: getId(),
         name: roomData.name,
         description: roomData.description,
         city: roomData.city,
@@ -23,15 +22,15 @@ function getById(id) {
         throw new Error(missing.map(m => `${m[0]} is required`).join('\n'))
        }
     
-     data.push(room)
-     await persist();
+    const result = await Room.create(room)
      
-     return room
+     return result
    }
-    */
+    
 
 module.exports = {
     getAll,
     getById,
+    create
     
 }
