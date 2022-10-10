@@ -5,6 +5,7 @@ const hbs = require('express-handlebars').create({
 const cookieParser = require('cookie-parser');
 const deafaultTitle = require('../middlewares/deafaultTitle');
 const auth = require('../middlewares/auth');
+const userNav = require('../middlewares/userNav')
 
 const jwtSecret = '9129ddasd2dasw'
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended:true}));
 app.use('/static', express.static('static'));
 app.use(cookieParser());
 app.use(auth(jwtSecret))
+app.use(userNav())
 
 app.use(deafaultTitle('Softuni Accomodation'))
 };

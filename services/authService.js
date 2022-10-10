@@ -24,17 +24,19 @@ if (existing){
  
 
 async function login(username, password){
-  return new Promise((res, rej) => {
-    if (username.toLowerCase() == 'peter' && password == '123456') {
-        res({
-            _id: '142121a2s1d5awds215',
-            username: 'Peter',
-            roles: ['user']
-        });
-    }else{
-        rej(new Error('Incorrect username or password'))
-    }
-  });
+  const user = await User.findOne({ username }).collation({ locale: 'en', strength: 2 });
+  if(!user){
+    throw new Error('Incorrect username or password')
+
+  }
+  const match = await bcrypt.compare(password, user.hashedPassword);
+  if(!match){
+    throw new Error('Incorrect username or password')
+  }
+   return {
+     username: user.username,
+     roles: user.roles
+   }
 }
 module.exports = {
     register,
